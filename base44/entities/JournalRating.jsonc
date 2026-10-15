@@ -1,0 +1,23 @@
+{
+  "name": "JournalRating",
+  "type": "object",
+  "properties": {
+    "journal_id": {
+      "type": "string"
+    },
+    "journal_owner_id": {
+      "type": "string",
+      "description": "Owner of the rated journal, used for level calculation"
+    },
+    "stars": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "journal_id",
+    "journal_owner_id",
+    "stars"
+  ]
+}

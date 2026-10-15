@@ -1,0 +1,19 @@
+{
+  "name": "JournalComment",
+  "type": "object",
+  "properties": {
+    "journal_id": {
+      "type": "string"
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "journal_id",
+    "content"
+  ]
+}

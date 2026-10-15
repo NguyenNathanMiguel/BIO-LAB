@@ -1,0 +1,65 @@
+{
+  "name": "PlantDiagnosis",
+  "type": "object",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "description": "Uploaded plant/leaf photo"
+    },
+    "plant_type_guess": {
+      "type": "string",
+      "description": "AI's best guess of the plant type"
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Detected visible symptoms (e.g. yellowing, spots, holes)"
+    },
+    "possible_conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "likelihood": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "biological_explanation": {
+      "type": "string"
+    },
+    "warning": {
+      "type": "string",
+      "description": "Warning shown when image is unclear or outside model knowledge"
+    },
+    "is_unclear": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "image_url"
+  ]
+}

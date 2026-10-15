@@ -1,0 +1,20 @@
+{
+  "name": "MicroscopeTask",
+  "type": "object",
+  "properties": {
+    "challenge_id": {
+      "type": "string"
+    },
+    "specimen_name": {
+      "type": "string"
+    },
+    "structure_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "challenge_id",
+    "specimen_name",
+    "structure_id"
+  ]
+}

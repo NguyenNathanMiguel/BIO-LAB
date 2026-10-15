@@ -1,0 +1,70 @@
+{
+  "name": "ObservationJournal",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "image_file_uri": {
+      "type": "string",
+      "description": "Private captured microscope view"
+    },
+    "observation": {
+      "type": "string",
+      "description": "What the student observed"
+    },
+    "evidence": {
+      "type": "string",
+      "description": "Supporting evidence/data"
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "ai_analysis": {
+      "type": "string",
+      "description": "AI guiding feedback: questions, hints, reasoning"
+    },
+    "conclusion": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ai_reviewed",
+        "completed"
+      ],
+      "default": "draft"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "plant_lab",
+        "microscope",
+        "experiment",
+        "general"
+      ],
+      "default": "general"
+    },
+    "is_shared": {
+      "type": "boolean",
+      "default": false,
+      "description": "Shared to the community hub"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the author when shared"
+    },
+    "shared_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "title",
+    "observation"
+  ]
+}
