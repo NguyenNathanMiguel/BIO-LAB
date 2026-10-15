@@ -1,0 +1,3 @@
+import React from 'react';
+import { COMPARISON } from '@/lib/geneticMaterialData';
+export default function GeneticComparison(){return <section className="rounded-2xl border border-lab-edge bg-lab-panel p-4 text-lab-ink"><h3 className="text-sm font-bold">DNA và RNA</h3><div className="mt-3 overflow-hidden rounded-xl border border-lab-edge text-[10px]"><div className="grid grid-cols-3 bg-lab-surface p-2 font-bold text-lab-glow"><span>Đặc điểm</span><span>DNA</span><span>RNA</span></div>{COMPARISON.map(row=><div key={row[0]} className="grid grid-cols-3 border-t border-lab-edge p-2 text-lab-muted">{row.map(cell=><span key={cell}>{cell}</span>)}</div>)}</div></section>}

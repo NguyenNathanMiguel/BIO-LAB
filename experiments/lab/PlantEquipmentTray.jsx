@@ -1,0 +1,7 @@
+import React, { useState } from "react";
+
+const tools = [["plant","Cây / chậu"],["water","Nước"],["co2","CO₂"],["thermometer","Nhiệt kế"],["nutrients","Dinh dưỡng"],["ruler","Thước đo"]];
+export default function PlantEquipmentTray({ drag }) {
+  const [open, setOpen] = useState(true);
+  return <><button type="button" onClick={() => setOpen(value => !value)} className="w-full min-h-11 px-4 text-left text-xs font-semibold tracking-widest bg-[var(--sim-panel)] text-[var(--sim-paper)]">KHAY DỤNG CỤ {open ? "— Thu gọn" : "— Mở"}</button>{open && <div className="flex gap-2 overflow-x-auto border-y border-[var(--sim-edge)] bg-[var(--sim-panel)] p-3">{tools.map(([type,label]) => <button type="button" key={type} onPointerDown={event => drag.start(event, type, true)} className="min-h-11 min-w-28 touch-none rounded-xl border border-[var(--sim-edge)] px-3 text-xs text-[var(--sim-paper)]">{label}</button>)}</div>}{drag.ghost && <div className="pointer-events-none fixed z-[120] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-emerald-400 bg-white px-3 py-2 text-xs shadow-xl" style={{ left: drag.ghost.x, top: drag.ghost.y }}>{tools.find(([type]) => type === drag.ghost.type)?.[1]}</div>}</>;
+}
