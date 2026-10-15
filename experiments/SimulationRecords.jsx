@@ -1,5 +1,0 @@
-import React from 'react';
-export default function SimulationRecords({records,onClear}) {
-  if (!records.length) return <p className="mt-3 text-xs text-slate-500">Chưa có lần đo nào. Chạy mô phỏng rồi chọn “Ghi kết quả”.</p>;
-  return <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[480px] text-left text-xs"><thead><tr className="border-b text-slate-500"><th className="py-2 pr-3">Lần</th><th className="py-2 pr-3">Thông số</th><th className="py-2 pr-3">Thời gian</th><th className="py-2">Kết quả</th></tr></thead><tbody>{records.map((r,i)=><tr key={r.id} className="border-b"><td className="py-2 pr-3">{i+1}</td><td className="py-2 pr-3">{r.parameters}</td><td className="py-2 pr-3">{r.minutes} phút</td><td className="py-2 font-medium">{r.value} {r.unit}</td></tr>)}</tbody></table><button onClick={onClear} className="mt-2 text-xs font-medium text-rose-600">Xóa bảng số liệu</button></div>;
-}
